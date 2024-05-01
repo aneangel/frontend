@@ -1,6 +1,6 @@
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8">mailto:aangeles0280@gmail.com
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta property="og:image" content="https://aneangel.github.io/frontend/static/media/preview/preview.png" />
@@ -24,69 +24,94 @@
                             <a id="text">Hey, I am Anthony.</a>
                         </h1>
                         <h2 class="caption">
-                            Here are some of the projects that I have developed, check out my 
+                            Check out my 
                             <a id="git" href="https://github.com/aneangel">GitHub</a>
-                             for more, and if you would like to connect visit my 
+                             for project code, and if you would like to connect visit my 
                              <a id="linkedin" href="https://www.linkedin.com/in/aneangeles/">LinkedIn.</a>
                             If you are interested in my experience, have a look at my
                             <a id="res" href="https://docs.google.com/file/d/1S8WxFZ-TCimB3UeNsQBDeUzhV5KJQTv4i1BT1dpj4qc/view">Resume</a>
                         </h2>
-                        <div class="columns">
-                            <div style="color: -webkit-link; cursor: pointer;">
-                                <div class="parent" id="YoloV8">
-                                    <div class="project">
-                                        <div onclick="location.href='./static/yolo.html'" style="cursor: pointer">
-                                            <div class="cover" id="coverScraper"></div>
+                        <!-- Tab links -->
+                        <div class="tab">
+                            <button class="tablinks active" onclick="openSection(event, 'Projects')">Projects</button>
+                            <button class="tablinks" onclick="openSection(event, 'Publications')">Publications</button>
+                        </div>
+                        
+                        <!-- Tab content for Projects -->
+                        <div id="Projects" class="tabcontent" style="display: block;">
+                            <!-- Existing projects HTML here -->
+                            <div class="columns">
+                                <div style="color: -webkit-link; cursor: pointer;">
+                                    <div class="parent" id="YoloV8">
+                                        <div class="project">
+                                            <div onclick="location.href='./static/yolo.html'" style="cursor: pointer">
+                                                <div class="cover" id="coverScraper"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="projectName">
-                                    <h1 class="name">YoloV8</h1>
-                                    <h2 class="name">Object Detection utility, based in Python</h2>
-                                </div>
-                            </div>
-                            <div style="color: -webkit-link; cursor: pointer;">
-                                <div class="parent" id="Dataset-generator">
-                                    <div class="project">
-                                        <div onclick="location.href='./static/dataset.html'" style="cursor: pointer">
-                                            <div class="cover" id="coverScraper"></div>
-                                        </div>
+                                    <div class="projectName">
+                                        <h1 class="name">YoloV8</h1>
+                                        <h2 class="name">Object Detection utility, based in Python</h2>
                                     </div>
                                 </div>
-                                <div class="projectName">
-                                    <h1 class="name">Dataset-generator</h1>
-                                    <h2 class="name">Dataset generator of the surroudning Bay Area cities for YoloV8, based in Python</h2>
-                                </div>
-                            </div>
-                            <div style="color: -webkit-link; cursor: pointer;">
-                                <div class="parent" id="translate-bot">
-                                    <div class="project">
-                                        <div onclick="location.href='./static/translate.html'" style="cursor: pointer">
-                                            <div class="cover" id="coverScraper"></div>
+                                <div style="color: -webkit-link; cursor: pointer;">
+                                    <div class="parent" id="Dataset-generator">
+                                        <div class="project">
+                                            <div onclick="location.href='./static/dataset.html'" style="cursor: pointer">
+                                                <div class="cover" id="coverScraper"></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="projectName">
-                                    <h1 class="name">translate-bot</h1>
-                                    <h2 class="name">Deepl API and Google Slides API script to accuretly use AI to translate text, based in Python</h2>
-                                </div>
-                            </div>
-                            <div style="color: -webkit-link; cursor: pointer;">
-                                <div class="parent" id="scrying">
-                                    <div class="project">
-                                        <div onclick="location.href='./static/scrying.html'" style="cursor: pointer">
-                                            <div class="cover" id="coverScraper"></div>
-                                        </div>
+                                    <div class="projectName">
+                                        <h1 class="name">Dataset-generator</h1>
+                                        <h2 class="name">Dataset generator of the surroudning Bay Area cities for YoloV8, based in Python</h2>
                                     </div>
                                 </div>
-                                <div class="projectName">
-                                    <h1 class="name">scrying</h1>
-                                    <h2 class="name">A VR utility using Google Maps API and OpenCV to produce equirectangular images, based in Python</h2>
+                                <div style="color: -webkit-link; cursor: pointer;">
+                                    <div class="parent" id="translate-bot">
+                                        <div class="project">
+                                            <div onclick="location.href='./static/translate.html'" style="cursor: pointer">
+                                                <div class="cover" id="coverScraper"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="projectName">
+                                        <h1 class="name">translate-bot</h1>
+                                        <h2 class="name">Deepl API and Google Slides API script to accuretly use AI to translate text, based in Python</h2>
+                                    </div>
+                                </div>
+                                <div style="color: -webkit-link; cursor: pointer;">
+                                    <div class="parent" id="scrying">
+                                        <div class="project">
+                                            <div onclick="location.href='./static/scrying.html'" style="cursor: pointer">
+                                                <div class="cover" id="coverScraper"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="projectName">
+                                        <h1 class="name">scrying</h1>
+                                        <h2 class="name">A VR utility using Google Maps API and OpenCV to produce equirectangular images, based in Python</h2>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Tab content for Publications (initially hidden) -->
+                        <div id="Publications" class="tabcontent" style="display: none;">
+                            <p>List of Publications Here</p>
+                            <!-- Add more content as needed -->
+                            <div class="publicationName">
+                                <h1 class="name">Designing a mixed-initiative multi-user VR interface for wildfire mitigation</h1>
+                                <iframe src="https://docs.google.com/viewer?embedded=true&url=https://tr.soe.ucsc.edu/sites/default/files/technical-reports/UCSC-SOE-23-06.pdf" width="100%" height="600px">
+                                    This browser does not support PDFs. Please download the PDF to view it: <a href="https://tr.soe.ucsc.edu/sites/default/files/technical-reports/UCSC-SOE-23-06.pdf">Download PDF</a>.
+                                </iframe>
+                            </div>
+                        </div>
+                        
                     </div>
                 </header>
             </div>
         </div>
     </body>
+
+    <script src="./static/js/script.js"></script>
