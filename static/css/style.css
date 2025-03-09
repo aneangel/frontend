@@ -20,29 +20,31 @@ header {
   left: 0;
 }
 
-.company-highlight {
-  color: #76B900; /* NVIDIA's official green */
-  font-weight: bold; /* Make it stand out */
-}
+/* .company-highlight {
+  color: #76B900;
+  font-weight: bold; 
+} */
 
-/* Fix About Section Layout for Mobile */
 @media (max-width: 768px) {
-  section#about {
-      height: auto;
-      padding: 20px;
-      text-align: center;
-  }
-
   section#about h1 {
-      font-size: 2.5em;
+      font-size: 2em;
+      text-align: center;
+      padding: 10px;
       line-height: 1.3;
   }
+}
+
+.company-highlight {
+  color: #76B900; /* NVIDIA green */
+  font-weight: bold;
+  font-size: 1em;
+  text-shadow: none;
 }
 
 /* Adjust Project Grid for Smaller Screens */
 @media (max-width: 768px) {
   .projects-grid {
-      grid-template-columns: 1fr; /* Single column layout */
+      grid-template-columns: 1fr;
       padding: 20px;
   }
 
@@ -52,16 +54,16 @@ header {
   }
 }
 
-/* Ensure navigation wraps properly */
 @media (max-width: 768px) {
   nav ul {
       flex-direction: column;
       text-align: center;
-      gap: 10px;
+      gap: 5px;
   }
 
   nav ul li {
       display: block;
+      margin: 5px 0;
   }
 }
 
