@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #e0e0e0;
-  color: #f8f8f8;
+  color: #000000;
 }
 
 header {
@@ -12,12 +12,17 @@ header {
   align-items: center;
   padding: 15px 30px;
   background: transparent;
-  color: white;
+  color: rgb(0, 0, 0);
   box-shadow: none;
-  position: fixed;
+  position: absolute;
   width: 95%;
   top: 0;
   left: 0;
+}
+
+.company-highlight {
+  color: #76B900; /* NVIDIA's official green */
+  font-weight: bold; /* Make it stand out */
 }
 
 /* Fix About Section Layout for Mobile */
@@ -95,7 +100,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 16px;
 }
@@ -184,64 +189,3 @@ section#about h1 {
   background: #005bb5;
 }
 
-/* Lava lamp background */
-.blob-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  z-index: -1;
-  background: linear-gradient(to bottom, #101820, #1b2735);
-}
-
-/* Individual floating blobs */
-.blob {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(255, 75, 75, 0.8) 30%, rgba(255, 0, 150, 0.5) 70%);
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.8;
-  animation: floatBlobs 10s infinite ease-in-out alternate;
-}
-
-/* Add variations in positioning */
-.blob:nth-child(1) {
-  top: 10%;
-  left: 15%;
-  animation-duration: 12s;
-}
-.blob:nth-child(2) {
-  top: 50%;
-  left: 60%;
-  background: radial-gradient(circle, rgba(0, 255, 200, 0.8) 30%, rgba(0, 150, 255, 0.5) 70%);
-  animation-duration: 14s;
-}
-.blob:nth-child(3) {
-  top: 70%;
-  left: 30%;
-  background: radial-gradient(circle, rgba(255, 220, 75, 0.8) 30%, rgba(255, 150, 0, 0.5) 70%);
-  animation-duration: 16s;
-}
-.blob:nth-child(4) {
-  top: 30%;
-  left: 80%;
-  background: radial-gradient(circle, rgba(150, 75, 255, 0.8) 30%, rgba(75, 0, 255, 0.5) 70%);
-  animation-duration: 18s;
-}
-
-/* Floating motion */
-@keyframes floatBlobs {
-  0% {
-      transform: translateY(0) translateX(0) scale(1);
-  }
-  50% {
-      transform: translateY(-50px) translateX(30px) scale(1.1);
-  }
-  100% {
-      transform: translateY(50px) translateX(-30px) scale(0.9);
-  }
-}
