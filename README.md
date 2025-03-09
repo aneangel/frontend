@@ -1,2 +1,3 @@
-# frontend
-trying out a new theme for a portfolio
+# Project Portfolio
+
+housing my experience and projects relevent to subject matter expertise
