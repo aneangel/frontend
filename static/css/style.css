@@ -20,6 +20,33 @@ header {
   left: 0;
 }
 
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.projects-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+}
+
 /* .company-highlight {
   color: #76B900;
   font-weight: bold; 
@@ -41,7 +68,6 @@ header {
   text-shadow: none;
 }
 
-/* Adjust Project Grid for Smaller Screens */
 @media (max-width: 768px) {
   .projects-grid {
       grid-template-columns: 1fr;
