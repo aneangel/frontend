@@ -1,117 +1,120 @@
 <html lang="en">
     <head>
-        <meta charset="utf-8">mailto:aangeles0280@gmail.com
+        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta property="og:image" content="https://aneangel.github.io/frontend/static/media/preview/preview.png" />
         <meta property="og:title" content="Anthony's Website" />
         <meta property="og:description" content="check out my portfolio" />
-        <title>aneangel</title>
+        <title>Anthony Angeles | Portfolio</title>
         <link rel="stylesheet" href="./static/css/style.css">
     </head>
     <body>
-        <div id="root">
-            <div class="App">
-                <header class="body">
-                    <a href="https://github.com/aneangel" class="github" id="g">
-                        <img src="./static//media/github-mark.png" alt="github" width="40" height="40">
-                    </a>
-                    <a href="mailto:aangeles0280@gmail.com" class="github" id="g">
-                        <h1 class="contact">Contact</h1>
-                    </a>
-                    <div class="projects">
-                        <h1 class="first">
-                            <a id="text">Hey, I am Anthony.</a>
-                        </h1>
-                        <h2 class="caption">
-                            Check out my 
-                            <a id="git" href="https://github.com/aneangel">GitHub</a>
-                             for project code, and if you would like to connect visit my 
-                             <a id="linkedin" href="https://www.linkedin.com/in/aneangeles/">LinkedIn.</a>
-                            If you are interested in my experience, have a look at my
-                            <a id="res" href="https://docs.google.com/file/d/1S8WxFZ-TCimB3UeNsQBDeUzhV5KJQTv4i1BT1dpj4qc/view">Resume</a>
-                        </h2>
-                        <!-- Tab links -->
-                        <div class="tab">
-                            <button class="tablinks active" onclick="openSection(event, 'Projects')">Projects</button>
-                            <button class="tablinks" onclick="openSection(event, 'Publications')">Publications</button>
-                        </div>
-                        
-                        <!-- Tab content for Projects -->
-                        <div id="Projects" class="tabcontent" style="display: block;">
-                            <!-- Existing projects HTML here -->
-                            <div class="columns">
-                                <div style="color: -webkit-link; cursor: pointer;">
-                                    <div class="parent" id="YoloV8">
-                                        <div class="project">
-                                            <div onclick="location.href='./static/yolo.html'" style="cursor: pointer">
-                                                <div class="cover" id="coverScraper"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projectName">
-                                        <h1 class="name">YoloV8</h1>
-                                        <h2 class="name">Object Detection utility, based in Python</h2>
-                                    </div>
-                                </div>
-                                <div style="color: -webkit-link; cursor: pointer;">
-                                    <div class="parent" id="Dataset-generator">
-                                        <div class="project">
-                                            <div onclick="location.href='./static/dataset.html'" style="cursor: pointer">
-                                                <div class="cover" id="coverScraper"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projectName">
-                                        <h1 class="name">Dataset-generator</h1>
-                                        <h2 class="name">Dataset generator of the surroudning Bay Area cities for YoloV8, based in Python</h2>
-                                    </div>
-                                </div>
-                                <div style="color: -webkit-link; cursor: pointer;">
-                                    <div class="parent" id="translate-bot">
-                                        <div class="project">
-                                            <div onclick="location.href='./static/translate.html'" style="cursor: pointer">
-                                                <div class="cover" id="coverScraper"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projectName">
-                                        <h1 class="name">translate-bot</h1>
-                                        <h2 class="name">Deepl API and Google Slides API script to accuretly use AI to translate text, based in Python</h2>
-                                    </div>
-                                </div>
-                                <div style="color: -webkit-link; cursor: pointer;">
-                                    <div class="parent" id="scrying">
-                                        <div class="project">
-                                            <div onclick="location.href='./static/scrying.html'" style="cursor: pointer">
-                                                <div class="cover" id="coverScraper"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="projectName">
-                                        <h1 class="name">scrying</h1>
-                                        <h2 class="name">A VR utility using Google Maps API and OpenCV to produce equirectangular images, based in Python</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Tab content for Publications (initially hidden) -->
-                        <div id="Publications" class="tabcontent" style="display: none;">
-                            <p>List of Publications Here</p>
-                            <!-- Add more content as needed -->
-                            <div class="publicationName">
-                                <h1 class="name">Designing a mixed-initiative multi-user VR interface for wildfire mitigation</h1>
-                                <iframe src="https://docs.google.com/viewer?embedded=true&url=https://tr.soe.ucsc.edu/sites/default/files/technical-reports/UCSC-SOE-23-06.pdf" width="100%" height="600px">
-                                    This browser does not support PDFs. Please download the PDF to view it: <a href="https://tr.soe.ucsc.edu/sites/default/files/technical-reports/UCSC-SOE-23-06.pdf">Download PDF</a>.
-                                </iframe>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </header>
-            </div>
+        <div class="blob-container">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
         </div>
+        
+        <header>
+            <h1 class="logo">Anthony Angeles</h1>
+            <nav>
+                <ul>
+                    <li><a href="https://github.com/aneangel" target="_blank">
+                        <img src="./static/media/github-mark.png" alt="Github" width="20"/></a></li>
+                    <li><a href="https://linkedin.com/in/aneangeles" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://www.youtube.com/@anthonyangeles5136" target="_blank">Youtube</a></li>
+                    <li><a href="mailto:aangeles0280@gmail.com">Contact</a></li>
+                    <li><a href="Revised Resume (1).pdf" target="_blank">Resume</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="about">
+            <h1>Software Engineer <br> based in the Bay Area. Currently dabbling in AI @NVIDIA.<br></h1>
+        </section>
+
+        <section id="projects" class="container">
+            <h2><strong>Selected Projects</strong> | click on card for github code</h2>
+            <div class="projects-grid">
+                <div class="project-card" onclick="openProject(event, 'https://github.com/aneangel/game-ai')">
+                    <img src="./static/media/GameAI.png" alt="Project Image">
+                    <h3>Game AI</h3>
+                    <a href="https://www.youtube.com/watch?v=nDhM38-K7y0" target="_blank"><p><span class="tag">Demo Video</span></p></a>
+                    <p>Agentic AI that follows player interacting with the world environment to achieve its goal.</p>
+                </div>
+        
+                <div class="project-card" onclick="openProject(event, 'https://github.com/aneangel/motion-planning')">
+                    <img src="./static/media/pathPlanning.png" alt="Project Image">
+                    <h3>A* Path Planning</h3>
+                    <a href="https://www.youtube.com/watch?v=BoZSmXVNabU" target="_blank"><p><span class="tag">Demo Video</span></p></a>
+                    <p>A demonstration of A* path planning algorithm that dynamically renders its shortest path avoiding obstacles.</p>
+                </div>
+        
+                <div class="project-card" onclick="openProject(event, 'https://github.com/cruz-control/waymo-challenge-2024')">
+                    <img src="./static/media/waymo.png" alt="Project Image">
+                    <h3>Motion Prediction and Perception for AV</h3>
+                    <p>Contributing to work for the Waymo Open Dataset Challenge.</p>
+                </div>
+        
+                <div class="project-card" onclick="openProject(event, 'https://github.com/aneangel/YOLOv8-objectDetection')">
+                    <img src="./static/media/yolov8.png" alt="Project Image">
+                    <h3>Object Detection for VR</h3>
+                    <a href="https://tr.soe.ucsc.edu/sites/default/files/technical-reports/UCSC-SOE-23-06.pdf" target="_blank"><p><span class="tag">CHI '24 Workshop Paper</span></p></a>
+                    <p>Multi-user VR interfaces for scientific sensemaking, supported by the Sloan Foundation.</p>
+                </div>
+        
+                <div class="project-card" onclick="openProject(event, 'https://github.com/aneangel/simulations-cpp/tree/main/fluids')">
+                    <img src="./static/media/particleSim.png" alt="Project Image">
+                    <h3>Particle Fluid Simulation</h3>
+                    <a href="https://www.youtube.com/watch?v=PQDpikbLeA0&t=42s" target="_blank"><p><span class="tag">Demo Video</span></p></a>
+                    <p>Exploring physiological signals to enhance collocated movements.</p>
+                </div>
+        
+                <div class="project-card" onclick="openProject(event, 'https://github.com/aneangel/cv-projects')">
+                    <img src="./static/media/facerec_video.png" alt="Project Image">
+                    <h3>Computer Vision Projects</h3>
+                    <p>Various projects dealing with computer vision that I am working. Currently I have a facial detection script available for use.</p>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            function openProject(event, url) {
+                // Check if the click was on an <a> tag inside the card
+                if (!event.target.closest('a')) {
+                    window.open(url, '_blank');
+                }
+            }
+        </script>
+        
+        <section id="experience" class="container">
+            <h2>Experience</h2>
+            <p><strong>NVIDIA - Software Engineer</strong> 2024 - Present</p>
+            <P> - Implemented ROS2 publishing for odometry in Isaac Sim from 2D space to 3D
+                - Created unit tests to ensure functionality for ROS2 odometry publishing
+                </P>
+            <p><strong>NVIDIA - Product Development Engineer</strong> 2021, 2022, 2023, 2024 - Present</p>
+            <p>- Maintaining internal test server using gitlab CI/CD to automate deployment of our dev branch workflow
+               - Designed and implemented internal tool connecting linux servers to leverage computing resources
+               - Implemented containerization techniques to have a persistent container that executed a workflow when awoken from arguments passed through an API call made
+               - Integrating applied AI into current projects with team wide scope
+                </p>
+            <h3>Research Experience</h3>
+            <p><strong>Research Assistant - UCSC</strong> | AV & AI Research, 2024</p>
+            <p>
+                Contributed toward a submission for Motion Prediction in 2024 Waymo Open Dataset Competition
+            </p>
+            <p><strong>Research Assistant - UCSC</strong> | AV Research, 2024</p>
+            <p>
+                Assisted principal investigator in implementing reinforcement learning algorithms for self-driving car applications.
+            </p>
+            <p><strong>Research Assistant - UCSC</strong> | AI & VR Research, 2023</p>
+            <p>
+                Constructed a Python script to employ YoloV8 AI for segmenting and masking flammable objects in VR images.
+            </p>
+        </section>
     </body>
 
     <script src="./static/js/script.js"></script>
