@@ -20,13 +20,21 @@ header {
   left: 0;
 }
 
-.about-content {
+section#about {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 50px 20px;
+  padding: 10vh 10px;
+  min-height: 45vh;
+  margin-top: 80px;
+}
+
+section#about h1 {
+  font-size: 4em;
+  font-weight: bold;
+  max-width: 600px;
 }
 
 .projects-content {
@@ -92,21 +100,6 @@ nav ul li a {
   color: rgb(0, 0, 0);
   text-decoration: none;
   font-size: 16px;
-}
-
-section#about {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 45vh;
-  text-align: left;
-  padding: 50px;
-}
-
-section#about h1 {
-  font-size: 4em;
-  font-weight: bold;
-  max-width: 600px;
 }
 
 .highlight {
