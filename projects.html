@@ -1,0 +1,118 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="og:image" content="https://aneangel.github.io/frontend/static/media/preview.png" />
+        <meta property="og:title" content="Anthony Angeles - Projects" />
+        <meta property="og:description" content="My robotics and AI projects" />
+        <title>Anthony Angeles | Projects</title>
+        <link rel="stylesheet" href="./static/css/style.css">
+    </head>
+    <body>
+        <div class="blob-container">
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+            <div class="blob"></div>
+        </div>
+        
+        <header>
+            <div class="header-content">
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section id="projects" class="container">
+            <div class="projects-content">
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>Game AI</h3>
+                        <img src="./static/media/GameAI.png" alt="Project Image">
+                        <div class="project-tags">
+                            <a href="https://github.com/aneangel/game-ai" target="_blank"><span class="tag">code</span></a>
+                            <a href="https://www.youtube.com/watch?v=nDhM38-K7y0" target="_blank"><span class="tag">video</span></a>
+                        </div>
+                        <p>Agentic AI that follows player interacting with the world environment to achieve its goal.</p>
+                    </div>
+            
+                    <div class="project-card">
+                        <h3>A* Path Planning</h3>
+                        <img src="./static/media/pathPlanning.png" alt="Project Image">
+                        <div class="project-tags">
+                            <a href="https://github.com/aneangel/motion-planning" target="_blank"><span class="tag">code</span></a>
+                            <a href="https://www.youtube.com/watch?v=BoZSmXVNabU" target="_blank"><span class="tag">video</span></a>
+                        </div>
+                        <p>A demonstration of A* path planning algorithm that dynamically renders its shortest path avoiding obstacles.</p>
+                    </div>
+            
+                    <div class="project-card">
+                        <h3>Reinforcement Learning using Isaac Lab and Sim</h3>
+                        <img src="./static/media/isaac_lab_rl.png" alt="Project Image">
+                        <div class="project-tags">
+                            <a href="https://github.com/aneangel/IsaacLab_RL" target="_blank"><span class="tag">code</span></a>
+                            <a href="https://www.youtube.com/watch?v=YbjEn9K7KVk" target="_blank"><span class="tag">video</span></a>
+                        </div>
+                        <p>Using reinforcement learning we teach the manipulator to reach an end goal pose matching the end goal orientation.</p>
+                    </div>
+            
+                    <div class="project-card">
+                        <h3>Object Detection for VR</h3>
+                        <img src="./static/media/yolov8.png" alt="Project Image">
+                        <div class="project-tags">
+                            <a href="https://github.com/aneangel/YOLOv8-objectDetection" target="_blank"><span class="tag">code</span></a>
+                            <a href="https://tr.soe.ucsc.edu/sites/default/files/technical-reports/UCSC-SOE-23-06.pdf" target="_blank"><span class="tag">paper</span></a>
+                        </div>
+                        <p>A pipeline that gathers images from google maps API and converts them into VR friendly formats that runs
+                            an objection detection model that I labled for flammable objects within the picture.
+                        </p>
+                    </div>
+            
+                    <div class="project-card">
+                        <h3>Particle Fluid Simulation</h3>
+                        <img src="./static/media/particleSim.png" alt="Project Image">
+                        <div class="project-tags">
+                            <a href="https://github.com/aneangel/simulations-cpp/tree/main/fluids" target="_blank"><span class="tag">code</span></a>
+                            <a href="https://www.youtube.com/watch?v=PQDpikbLeA0&t=42s" target="_blank"><span class="tag">video</span></a>
+                        </div>
+                        <p>Simulation of fluid dynamics using particles written in C++.</p>
+                    </div>
+            
+                    <div class="project-card">
+                        <h3>Computer Vision Projects</h3>
+                        <img src="./static/media/camera_detection.jpg" alt="Project Image">
+                        <div class="project-tags">
+                            <a href="https://github.com/aneangel/cv-projects" target="_blank"><span class="tag">code</span></a>
+                        </div>
+                        <p>Various projects dealing with computer vision that I am working on. Currently I have a facial detection script available for use.</p>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Franka Emika Panda Robot</h3>
+                        <img src="./static/media/franka.png" alt="Project Image">
+                        <div class="project-tags">
+                            <a href="https://github.com/aneangel/cv-projects" target="_blank"><span class="tag">code</span></a>
+                        </div>
+                        <p>Python script that maps out the specific path the robot takes in the landing page of the website.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <script>
+            function openProject(event, url) {
+                // Check if the click was on an <a> tag inside the card
+                if (!event.target.closest('a')) {
+                    window.open(url, '_blank');
+                }
+            }
+        </script>
+        
+        <script src="./static/js/script.js"></script>
+    </body>
+</html>

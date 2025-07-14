@@ -8,9 +8,9 @@ body {
 
 header {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding: 20px 40px;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0;
   background: transparent;
   color: rgb(0, 0, 0);
   box-shadow: none;
@@ -19,6 +19,7 @@ header {
   top: 0;
   left: 0;
   box-sizing: border-box;
+  z-index: 1000;
 }
 
 section#about {
@@ -31,9 +32,34 @@ section#about {
   min-height: 45vh;
 }
 
-.about-content {
-  max-width: 800px;
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1200px;
   width: 100%;
+}
+
+.about-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+/* Old top-links styles removed - using main-nav instead */
+
+.robot-container {
+  flex: 1;
+  max-width: 500px;
+  height: 400px;
+  position: relative;
+}
+
+#franka-video {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  background: transparent;
 }
 
 .about-content h1 {
@@ -93,29 +119,71 @@ section#about {
   margin-left: 20px;
 }
 
-nav {
-  margin-left: auto;
-  margin-right: 20px;
+/* Main Navigation - Clean Stanford REAL lab style */
+.main-nav {
+  background: transparent;
+  padding: 0;
+  margin-top: 20px;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
 }
 
-nav ul {
+.main-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 30px;
+  gap: 120px;
+  justify-content: center;
 }
 
-nav ul li a {
-  color: rgb(0, 0, 0);
+.main-nav li {
+  position: relative;
+}
+
+.nav-link {
+  display: block;
+  padding: 15px 0;
+  color: #888;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 500;
-  transition: color 0.3s;
+  font-size: 18px;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  position: relative;
 }
 
-nav ul li a:hover {
-  color: #76B900;
+.nav-link:hover {
+  color: #000;
+}
+
+.nav-link.active {
+  color: #000;
+  font-weight: 500;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #000;
+}
+
+/* Projects page specific styles */
+#projects h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #000;
+}
+
+.project-tags {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
 }
 
 .highlight {
@@ -128,6 +196,11 @@ nav ul li a:hover {
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px;
+}
+
+/* Projects page container */
+#projects.container {
+  padding: 140px 40px 60px;
 }
 
 .projects-grid {
@@ -210,10 +283,9 @@ nav ul li a:hover {
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
-      justify-content: center;
+      justify-content: flex-start;
       width: 100%;
-      padding: 10px 0;
+      padding: 0;
       position: absolute;
       top: 0;
       background: transparent;
@@ -225,24 +297,24 @@ nav ul li a:hover {
       margin-bottom: 10px;
   }
 
-  nav {
-      width: 100%;
-      display: flex;
-      justify-content: center;
+  /* Mobile navigation styles */
+  .main-nav {
+    margin-top: 20px;
+    border-bottom: 1px solid #ddd;
   }
-
-  nav ul {
-      display: flex;
-      flex-direction: row; 
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      padding: 0;
+  
+  .main-nav ul {
+    justify-content: center;
+    gap: 80px;
   }
-
-  nav ul li {
-      display: inline-block;
-      text-align: center;
+  
+  .nav-link {
+    padding: 12px 0;
+    font-size: 16px;
+  }
+  
+  .nav-link.active::after {
+    bottom: -13px;
   }
 }
 
@@ -257,13 +329,26 @@ nav ul li a:hover {
       min-height: 5vh;
   }
 
+  .about-container {
+      flex-direction: column;
+      gap: 30px;
+  }
+
   .about-content {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       gap: 10px;
+      max-width: 100%;
   }
+
+  .robot-container {
+      max-width: 100%;
+      height: 300px;
+  }
+
+  /* Old top-links mobile styles removed */
 }
 
 /* Add responsive breakpoints for the grid */
@@ -287,5 +372,35 @@ nav ul li a:hover {
   
   .project-card img {
     height: 160px;
+  }
+}
+
+/* About section links styling */
+.about-links {
+  margin-top: 30px;
+  display: flex;
+  gap: 30px;
+}
+
+.about-links a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.about-links a:hover {
+  color: #76B900;
+}
+
+/* Responsive about links */
+@media (max-width: 770px) {
+  .about-links {
+    gap: 20px;
+  }
+  
+  .about-links a {
+    font-size: 14px;
   }
 }

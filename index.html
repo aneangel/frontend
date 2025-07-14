@@ -19,116 +19,44 @@
         
         <header>
             <div class="header-content">
-                <nav>
+                <nav class="main-nav">
                     <ul>
-                        <li><a href="https://github.com/aneangel" target="_blank">GitHub</a></li>
-                        <li><a href="https://linkedin.com/in/aneangeles" target="_blank">LinkedIn</a></li>
-                        <li><a href="https://www.youtube.com/@anthonyangeles5136" target="_blank">YouTube</a></li>
-                        <li><a href="mailto:aangeles0280@gmail.com">Contact</a></li>
-                        <li><a href="ResumeY25.pdf" target="_blank">Resume</a></li>
+                        <li><a href="index.html" class="nav-link active">Home</a></li>
+                        <li><a href="projects.html" class="nav-link">Projects</a></li>
+                        
                     </ul>
                 </nav>
             </div>
         </header>
 
         <section id="about">
-            <div class="about-content">
-                <h1>Anthony Angeles</h1>
-                <h2>Software Engineer based in the Bay Area</h2>
-                <p>Hello! I'm a software engineer with a passion for AI and innovative technologies. Currently working at 
-                <span class="company-highlight">NVIDIA</span>, where I focus on developing cutting-edge solutions. 
-                I'm particularly interested in computer vision, autonomous systems, and simulation technologies, 
-                with a strong drive for research and practical applications in these fields.</p>
-            </div>
-        </section>
-
-        <section id="projects" class="container">
-            <div class="projects-content">
-                <h2>Selected Projects | click on a card to be taken to the github code</h2>
-                <div class="projects-grid">
-                    <div class="project-card" onclick="openProject(event, 'https://github.com/aneangel/game-ai')">
-                        <img src="./static/media/GameAI.png" alt="Project Image">
-                        <h3>Game AI</h3>
-                        <a href="https://www.youtube.com/watch?v=nDhM38-K7y0" target="_blank"><p><span class="tag">Demo Video</span></p></a>
-                        <p>Agentic AI that follows player interacting with the world environment to achieve its goal.</p>
+            <div class="about-container">
+                <div class="about-content">
+                    <h1>Anthony Angeles</h1>
+                    <p>Hello! I'm a software engineer currently working
+                    <span class="company-highlight">@NVIDIA</span>, 
+                    I am particularly interested in perception, general purpose robotics, and simulation technologies, 
+                    with a strong drive for research and practical applications in these fields. Check out some of my related work :)
+                    </p>
+                    
+                    <div class="about-links">
+                        <a href="https://github.com/aneangel" target="_blank">Github</a>
+                        <a href="https://www.youtube.com/@anthonyangeles5136" target="_blank">Youtube</a>
+                        <a href="https://linkedin.com/in/aneangeles" target="_blank">LinkedIn</a>
+                        <a href="Resume.pdf" target="_blank">Resume</a>
                     </div>
-            
-                    <div class="project-card" onclick="openProject(event, 'https://github.com/aneangel/motion-planning')">
-                        <img src="./static/media/pathPlanning.png" alt="Project Image">
-                        <h3>A* Path Planning</h3>
-                        <a href="https://www.youtube.com/watch?v=BoZSmXVNabU" target="_blank"><p><span class="tag">Demo Video</span></p></a>
-                        <p>A demonstration of A* path planning algorithm that dynamically renders its shortest path avoiding obstacles.</p>
-                    </div>
-            
-                    <div class="project-card" onclick="openProject(event, 'https://github.com/aneangel/IsaacLab_RL')">
-                        <img src="./static/media/isaac_lab_rl.png" alt="Project Image">
-                        <h3>Reinforcement Learning using Isaac Lab and Sim</h3>
-                        <a href="https://www.youtube.com/watch?v=YbjEn9K7KVk" target="_blank"><p><span class="tag">Demo Video</span></p></a>
-                        <p>Using reinforcement learning we teach the manipulator to reach an end goal pose matching the end goal orientation.</p>
-                    </div>
-            
-                    <div class="project-card" onclick="openProject(event, 'https://github.com/aneangel/YOLOv8-objectDetection')">
-                        <img src="./static/media/yolov8.png" alt="Project Image">
-                        <h3>Object Detection for VR</h3>
-                        <a href="https://tr.soe.ucsc.edu/sites/default/files/technical-reports/UCSC-SOE-23-06.pdf" target="_blank"><p><span class="tag">CHI '24 Workshop Paper</span></p></a>
-                        <p>A pipeline that gathers images from google maps API and converts them into VR friendly formats that runs
-                            an objection detection model that I labled for flammable objects within the picture".
-                        </p>
-                    </div>
-            
-                    <div class="project-card" onclick="openProject(event, 'https://github.com/aneangel/simulations-cpp/tree/main/fluids')">
-                        <img src="./static/media/particleSim.png" alt="Project Image">
-                        <h3>Particle Fluid Simulation</h3>
-                        <a href="https://www.youtube.com/watch?v=PQDpikbLeA0&t=42s" target="_blank"><p><span class="tag">Demo Video</span></p></a>
-                        <p>Simulation of fluid dynamics using particles written in C++.</p>
-                    </div>
-            
-                    <div class="project-card" onclick="openProject(event, 'https://github.com/aneangel/cv-projects')">
-                        <img src="./static/media/camera_detection.jpg" alt="Project Image">
-                        <h3>Computer Vision Projects</h3>
-                        <p>Various projects dealing with computer vision that I am working on. Currently I have a facial detection script available for use.</p>
-                    </div>
+                </div>
+                
+                <div class="robot-container">
+                    <video id="franka-video" autoplay muted loop>
+                        <source src="./static/media/franka.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
         </section>
         
-        <script>
-            function openProject(event, url) {
-                // Check if the click was on an <a> tag inside the card
-                if (!event.target.closest('a')) {
-                    window.open(url, '_blank');
-                }
-            }
-        </script>
         
-        <!-- <section id="experience" class="container">
-            <div class="experience-contetn">
-                <h2>Experience</h2>
-                <p><strong>NVIDIA - Software Engineer</strong> 2024 - Present</p>
-                <P> - Implemented ROS2 publishing for odometry in Isaac Sim from 2D space to 3D
-                    - Created unit tests to ensure functionality for ROS2 odometry publishing
-                    </P>
-                <p><strong>NVIDIA - Product Development Engineer</strong> 2021, 2022, 2023, 2024 - Present</p>
-                <p>- Maintaining internal test server using gitlab CI/CD to automate deployment of our dev branch workflow
-                - Designed and implemented internal tool connecting linux servers to leverage computing resources
-                - Implemented containerization techniques to have a persistent container that executed a workflow when awoken from arguments passed through an API call made
-                - Integrating applied AI into current projects with team wide scope
-                    </p>
-                <h3>Research Experience</h3>
-                <p><strong>Research Assistant - UCSC</strong> | AV & AI Research, 2024</p>
-                <p>
-                    Contributed toward a submission for Motion Prediction in 2024 Waymo Open Dataset Competition
-                </p>
-                <p><strong>Research Assistant - UCSC</strong> | AV Research, 2024</p>
-                <p>
-                    Assisted principal investigator in implementing reinforcement learning algorithms for self-driving car applications.
-                </p>
-                <p><strong>Research Assistant - UCSC</strong> | AI & VR Research, 2023</p>
-                <p>
-                    Constructed a Python script to employ YoloV8 AI for segmenting and masking flammable objects in VR images.
-                </p>
-            </div>
-        </section> -->
     </body>
 
     <script src="./static/js/script.js"></script>
