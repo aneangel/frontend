@@ -174,12 +174,9 @@
                             <h3>Franka Panda MuJoCo Dance</h3>
                             <div class="media-gallery">
                                 <div class="media-container">
-                                    <div class="media-item active" data-type="image">
-                                        <img src="./static/media/frankaPandas.png" alt="Multiple Franka Robots">
-                                    </div>
-                                    <div class="media-item" data-type="video">
+                                    <div class="media-item active" data-type="video">
                                         <video muted loop preload="metadata" playsinline>
-                                            <source src="./static/media/franka.mp4" type="video/mp4">
+                                            <source src="./static/media/mujoco_franka/dancingFranka.mp4" type="video/mp4">
                                             Your browser does not support the video tag.
                                         </video>
                                         <div class="video-overlay">
@@ -200,12 +197,9 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="media-item" data-type="image">
-                                        <img src="./static/media/franka.png" alt="Single Franka Robot">
-                                    </div>
                                 </div>
                                 
-                                <div class="media-nav">
+                                <div class="media-nav" style="display: none;">
                                     <button class="nav-btn prev" onclick="navigateMedia(this, -1)">
                                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                                             <path d="M7.5 2L3.5 6L7.5 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -220,17 +214,11 @@
                                 
                                 <div class="media-thumbnails">
                                     <div class="thumbnail active" onclick="selectMedia(this, 0)">
-                                        <img src="./static/media/frankaPandas.png" alt="Multiple Robots">
-                                    </div>
-                                    <div class="thumbnail" onclick="selectMedia(this, 1)">
                                         <div class="video-thumb">
                                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                                                 <path d="M8 5v14l11-7z"/>
                                             </svg>
                                         </div>
-                                    </div>
-                                    <div class="thumbnail" onclick="selectMedia(this, 2)">
-                                        <img src="./static/media/franka.png" alt="Single Robot">
                                     </div>
                                 </div>
                             </div>
