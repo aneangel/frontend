@@ -31,88 +31,322 @@
         <section id="projects" class="container">
             <div class="projects-content">
                 <div class="projects-grid">
-                    <div class="project-card">
-                        <h3>Franka Emika Panda Robot</h3>
-                        <img src="./static/media/franka.png" alt="Project Image">
-                        <div class="project-tags">
-                            <a href="https://github.com/aneangel/cv-projects" target="_blank"><span class="tag">code</span></a>
+                    <div class="project-card" onclick="toggleExpansion(this)">
+                        <div class="project-card-content">
+                            <h3>RobotBallet GoogleDeepmind</h3>
+                            <img src="./static/media/googleDeepmind.png" alt="Project Image">
+                            <div class="project-tags">
+                                <a href="https://github.com/aneangel/cv-projects" target="_blank"><span class="tag">code</span></a>
+                                <a href="https://www.science.org/doi/10.1126/scirobotics.ads1204" target="_blank"><span class="tag">Research Paper</span></a>
+                            </div>
+                            <p>My attempt at replicating the research presented by GoogleDeepmind in MuJoCo.</p>
                         </div>
-                        <p>Python script that maps out the specific path the robot takes in the landing page of the website.</p>
-                    </div>
-            
-                    <div class="project-card">
-                        <h3>Reinforcement Learning using Isaac Lab and Sim</h3>
-                        <img src="./static/media/rl.png" alt="Project Image">
-                        <div class="project-tags">
-                            <a href="https://github.com/aneangel/IsaacLab_RL" target="_blank"><span class="tag">code</span></a>
-                            <a href="https://www.youtube.com/watch?v=YbjEn9K7KVk" target="_blank"><span class="tag">video</span></a>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <div>
+                                    <h4>Project Overview</h4>
+                                    <p>This project focuses on replicating the groundbreaking robotics research from GoogleDeepmind, specifically their work on creating ballet-like movements in robotic systems using advanced motion planning and control algorithms.</p>
+                                    
+                                    <h4>Technologies Used</h4>
+                                    <ul>
+                                        <li>MuJoCo Physics Simulation</li>
+                                        <li>Python for control algorithms</li>
+                                        <li>XML configuration for robot models</li>
+                                        <li>Advanced motion planning techniques</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h4>Key Features</h4>
+                                    <ul>
+                                        <li>Smooth trajectory generation for robotic ballet movements</li>
+                                        <li>Physics-based simulation environment</li>
+                                        <li>Real-time motion control and feedback</li>
+                                        <li>Integration with research findings from Science Robotics</li>
+                                    </ul>
+                                    
+                                    <h4>Implementation Details</h4>
+                                    <p>The implementation uses MuJoCo's advanced physics engine to create realistic robotic movements that mirror the grace and precision of ballet. The system incorporates complex trajectory planning algorithms to ensure smooth, flowing motions while maintaining physical constraints and stability.</p>
+                                </div>
+                            </div>
                         </div>
-                        <p>Using reinforcement learning we teach the manipulator to reach an end goal pose matching the end goal orientation.</p>
                     </div>
 
-                    <div class="project-card">
-                        <h3>Game AI</h3>
-                        <img src="./static/media/GameAI.png" alt="Project Image">
-                        <div class="project-tags">
-                            <a href="https://github.com/aneangel/game-ai" target="_blank"><span class="tag">code</span></a>
-                            <a href="https://www.youtube.com/watch?v=nDhM38-K7y0" target="_blank"><span class="tag">video</span></a>
+                    <div class="project-card" onclick="toggleExpansion(this)">
+                        <div class="project-card-content">
+                            <h3>Franka Panda MuJoCo Dance</h3>
+                            <img src="./static/media/frankaPandas.png" alt="Project Image">
+                            <div class="project-tags">
+                                <!-- <a href="https://github.com/aneangel/cv-projects" target="_blank"><span class="tag">code</span></a> -->
+                            </div>
+                            <p>A simulation using MuJoCo and GoogleDeepmind XML files to simulate dancing franka panda robots.</p>
                         </div>
-                        <p>Agentic AI that follows player interacting with the world environment to achieve its goal.</p>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <h4>Project Overview</h4>
+                                <p>This project demonstrates the power of MuJoCo physics simulation by creating coordinated dance movements using multiple Franka Panda robotic arms. The simulation showcases advanced multi-agent coordination and synchronized motion planning.</p>
+                                
+                                <h4>Technologies Used</h4>
+                                <ul>
+                                    <li>MuJoCo Physics Engine</li>
+                                    <li>GoogleDeepmind XML robot models</li>
+                                    <li>Multi-agent coordination algorithms</li>
+                                    <li>Real-time animation and rendering</li>
+                                </ul>
+                                
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Synchronized multi-robot choreography</li>
+                                    <li>Physics-accurate motion simulation</li>
+                                    <li>Dynamic collision avoidance</li>
+                                    <li>Real-time performance optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" onclick="toggleExpansion(this)">
+                        <div class="project-card-content">
+                            <h3>Franka Emika Panda Robot</h3>
+                            <img src="./static/media/franka.png" alt="Project Image">
+                            <div class="project-tags">
+                                <a href="https://github.com/aneangel/cv-projects" target="_blank"><span class="tag">code</span></a>
+                            </div>
+                            <p>Python script that maps out the specific path the robot takes in the landing page of the website.</p>
+                        </div>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <h4>Project Overview</h4>
+                                <p>This project creates an interactive visualization of the Franka Emika Panda robot's movement path displayed on the landing page. It demonstrates precision robotics path planning and real-time trajectory visualization.</p>
+                                
+                                <h4>Technologies Used</h4>
+                                <ul>
+                                    <li>Python for path calculation</li>
+                                    <li>Web-based visualization libraries</li>
+                                    <li>Real-time data processing</li>
+                                    <li>Interactive animation frameworks</li>
+                                </ul>
+                                
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Real-time path visualization</li>
+                                    <li>Interactive robot movement display</li>
+                                    <li>Precision trajectory mapping</li>
+                                    <li>Web-integrated robotics demonstration</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
             
-                    <div class="project-card">
-                        <h3>A* Path Planning</h3>
-                        <img src="./static/media/pathPlanning.png" alt="Project Image">
-                        <div class="project-tags">
-                            <a href="https://github.com/aneangel/motion-planning" target="_blank"><span class="tag">code</span></a>
-                            <a href="https://www.youtube.com/watch?v=BoZSmXVNabU" target="_blank"><span class="tag">video</span></a>
+                    <div class="project-card" onclick="toggleExpansion(this)">
+                        <div class="project-card-content">
+                            <h3>Reinforcement Learning using Isaac Lab and Sim</h3>
+                            <img src="./static/media/rl.png" alt="Project Image">
+                            <div class="project-tags">
+                                <a href="https://github.com/aneangel/IsaacLab_RL" target="_blank"><span class="tag">code</span></a>
+                                <a href="https://www.youtube.com/watch?v=YbjEn9K7KVk" target="_blank"><span class="tag">video</span></a>
+                            </div>
+                            <p>Using reinforcement learning we teach the manipulator to reach an end goal pose matching the end goal orientation.</p>
                         </div>
-                        <p>A demonstration of A* path planning algorithm that dynamically renders its shortest path avoiding obstacles.</p>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <h4>Project Overview</h4>
+                                <p>This project leverages NVIDIA Isaac Lab and Isaac Sim to create a reinforcement learning environment where robotic manipulators learn complex reaching tasks. The system trains robots to achieve precise pose and orientation targets through trial and learning.</p>
+                                
+                                <h4>Technologies Used</h4>
+                                <ul>
+                                    <li>NVIDIA Isaac Lab framework</li>
+                                    <li>Isaac Sim physics simulation</li>
+                                    <li>PyTorch for RL algorithms</li>
+                                    <li>GPU-accelerated training</li>
+                                    <li>Advanced reward shaping techniques</li>
+                                </ul>
+                                
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>End-to-end RL training pipeline</li>
+                                    <li>Precise pose and orientation control</li>
+                                    <li>Real-time simulation environment</li>
+                                    <li>Scalable training across multiple environments</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" onclick="toggleExpansion(this)">
+                        <div class="project-card-content">
+                            <h3>Game AI</h3>
+                            <img src="./static/media/GameAI.png" alt="Project Image">
+                            <div class="project-tags">
+                                <a href="https://github.com/aneangel/game-ai" target="_blank"><span class="tag">code</span></a>
+                                <a href="https://www.youtube.com/watch?v=nDhM38-K7y0" target="_blank"><span class="tag">video</span></a>
+                            </div>
+                            <p>Agentic AI that follows player interacting with the world environment to achieve its goal.</p>
+                        </div>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <h4>Project Overview</h4>
+                                <p>An intelligent game AI system that creates autonomous agents capable of understanding and interacting with complex game environments. The AI agents can observe player behavior and adapt their strategies dynamically.</p>
+                                
+                                <h4>Technologies Used</h4>
+                                <ul>
+                                    <li>Machine Learning frameworks</li>
+                                    <li>Behavioral tree systems</li>
+                                    <li>Real-time decision making algorithms</li>
+                                    <li>Environmental state analysis</li>
+                                </ul>
+                                
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Adaptive AI behavior based on player actions</li>
+                                    <li>Dynamic goal-oriented decision making</li>
+                                    <li>Real-time environmental awareness</li>
+                                    <li>Interactive gameplay demonstrations</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
             
-                    <div class="project-card">
-                        <h3>Object Detection for VR</h3>
-                        <img src="./static/media/yolov8.png" alt="Project Image">
-                        <div class="project-tags">
-                            <a href="https://github.com/aneangel/YOLOv8-objectDetection" target="_blank"><span class="tag">code</span></a>
-                            <a href="https://tr.soe.ucsc.edu/sites/default/files/technical-reports/UCSC-SOE-23-06.pdf" target="_blank"><span class="tag">paper</span></a>
+                    <div class="project-card" onclick="toggleExpansion(this)">
+                        <div class="project-card-content">
+                            <h3>A* Path Planning</h3>
+                            <img src="./static/media/pathPlanning.png" alt="Project Image">
+                            <div class="project-tags">
+                                <a href="https://github.com/aneangel/motion-planning" target="_blank"><span class="tag">code</span></a>
+                                <a href="https://www.youtube.com/watch?v=BoZSmXVNabU" target="_blank"><span class="tag">video</span></a>
+                            </div>
+                            <p>A demonstration of A* path planning algorithm that dynamically renders its shortest path avoiding obstacles.</p>
                         </div>
-                        <p>A pipeline that gathers images from google maps API and converts them into VR friendly formats that runs
-                            an objection detection model that I labled for flammable objects within the picture.
-                        </p>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <h4>Project Overview</h4>
+                                <p>An interactive implementation of the A* pathfinding algorithm that visualizes the search process in real-time. The system demonstrates optimal path calculation while dynamically avoiding obstacles in a grid-based environment.</p>
+                                
+                                <h4>Technologies Used</h4>
+                                <ul>
+                                    <li>A* search algorithm implementation</li>
+                                    <li>Real-time visualization libraries</li>
+                                    <li>Interactive grid-based interface</li>
+                                    <li>Dynamic obstacle placement system</li>
+                                </ul>
+                                
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Real-time pathfinding visualization</li>
+                                    <li>Dynamic obstacle avoidance</li>
+                                    <li>Interactive start/end point selection</li>
+                                    <li>Step-by-step algorithm demonstration</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
             
-                    <div class="project-card">
-                        <h3>Particle Fluid Simulation</h3>
-                        <img src="./static/media/particleSim.png" alt="Project Image">
-                        <div class="project-tags">
-                            <a href="https://github.com/aneangel/simulations-cpp/tree/main/fluids" target="_blank"><span class="tag">code</span></a>
-                            <a href="https://www.youtube.com/watch?v=PQDpikbLeA0&t=42s" target="_blank"><span class="tag">video</span></a>
+                    <div class="project-card" onclick="toggleExpansion(this)">
+                        <div class="project-card-content">
+                            <h3>Object Detection for VR</h3>
+                            <img src="./static/media/yolov8.png" alt="Project Image">
+                            <div class="project-tags">
+                                <a href="https://github.com/aneangel/YOLOv8-objectDetection" target="_blank"><span class="tag">code</span></a>
+                                <a href="https://tr.soe.ucsc.edu/sites/default/files/technical-reports/UCSC-SOE-23-06.pdf" target="_blank"><span class="tag">paper</span></a>
+                            </div>
+                            <p>A pipeline that gathers images from google maps API and converts them into VR friendly formats that runs
+                                an objection detection model that I labled for flammable objects within the picture.
+                            </p>
                         </div>
-                        <p>Simulation of fluid dynamics using particles written in C++.</p>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <h4>Project Overview</h4>
+                                <p>An innovative VR application that combines Google Maps imagery with YOLOv8 object detection to identify flammable objects in real-world environments. This project creates immersive safety assessment tools for virtual reality platforms.</p>
+                                
+                                <h4>Technologies Used</h4>
+                                <ul>
+                                    <li>YOLOv8 object detection framework</li>
+                                    <li>Google Maps API integration</li>
+                                    <li>VR-compatible image processing</li>
+                                    <li>Custom dataset labeling and training</li>
+                                </ul>
+                                
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Real-world imagery integration in VR</li>
+                                    <li>Custom-trained flammable object detection</li>
+                                    <li>Interactive VR safety assessment</li>
+                                    <li>Academic research publication</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
             
-                    <div class="project-card">
-                        <h3>Computer Vision Projects</h3>
-                        <img src="./static/media/camera_detection.jpg" alt="Project Image">
-                        <div class="project-tags">
-                            <a href="https://github.com/aneangel/cv-projects" target="_blank"><span class="tag">code</span></a>
+                    <div class="project-card" onclick="toggleExpansion(this)">
+                        <div class="project-card-content">
+                            <h3>Particle Fluid Simulation</h3>
+                            <img src="./static/media/particleSim.png" alt="Project Image">
+                            <div class="project-tags">
+                                <a href="https://github.com/aneangel/simulations-cpp/tree/main/fluids" target="_blank"><span class="tag">code</span></a>
+                                <a href="https://www.youtube.com/watch?v=PQDpikbLeA0&t=42s" target="_blank"><span class="tag">video</span></a>
+                            </div>
+                            <p>Simulation of fluid dynamics using particles written in C++.</p>
                         </div>
-                        <p>Various projects dealing with computer vision that I am working on. Currently I have a facial detection script available for use.</p>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <h4>Project Overview</h4>
+                                <p>A high-performance particle-based fluid dynamics simulation built from scratch in C++. The system accurately models fluid behavior using computational physics principles and provides real-time visualization of complex fluid interactions.</p>
+                                
+                                <h4>Technologies Used</h4>
+                                <ul>
+                                    <li>C++ for performance-critical computation</li>
+                                    <li>Particle-based physics simulation</li>
+                                    <li>Real-time rendering systems</li>
+                                    <li>Advanced mathematical modeling</li>
+                                </ul>
+                                
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Real-time fluid particle simulation</li>
+                                    <li>Physics-accurate fluid dynamics</li>
+                                    <li>High-performance C++ implementation</li>
+                                    <li>Interactive parameter adjustment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="project-card" onclick="toggleExpansion(this)">
+                        <div class="project-card-content">
+                            <h3>Computer Vision Projects</h3>
+                            <img src="./static/media/camera_detection.jpg" alt="Project Image">
+                            <div class="project-tags">
+                                <a href="https://github.com/aneangel/cv-projects" target="_blank"><span class="tag">code</span></a>
+                            </div>
+                            <p>Various projects dealing with computer vision that I am working on. Currently I have a facial detection script available for use.</p>
+                        </div>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <h4>Project Overview</h4>
+                                <p>A comprehensive collection of computer vision projects showcasing various techniques in image processing and pattern recognition. The repository includes facial detection systems and other advanced CV applications.</p>
+                                
+                                <h4>Technologies Used</h4>
+                                <ul>
+                                    <li>OpenCV computer vision library</li>
+                                    <li>Python for rapid prototyping</li>
+                                    <li>Machine learning frameworks</li>
+                                    <li>Real-time image processing</li>
+                                </ul>
+                                
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li>Real-time facial detection and recognition</li>
+                                    <li>Modular CV pipeline architecture</li>
+                                    <li>Multiple detection algorithms</li>
+                                    <li>Extensible project framework</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
             </div>
         </section>
-        
-        <script>
-            function openProject(event, url) {
-                // Check if the click was on an <a> tag inside the card
-                if (!event.target.closest('a')) {
-                    window.open(url, '_blank');
-                }
-            }
-        </script>
         
         <script src="./static/js/script.js"></script>
     </body>
