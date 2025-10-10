@@ -198,15 +198,22 @@ function toggleVideoPlayback(videoItem) {
     // Add a small delay to ensure any competing operations finish first
     setTimeout(() => {
       if (video.paused) { // Double-check it's still paused
-        video.play().then(() => {
-          videoItem.classList.add('video-playing');
-          playBtn.classList.add('playing');
-        }).catch(err => {
-          console.log('Play prevented:', err);
-          // Reset UI state if play failed
-          videoItem.classList.remove('video-playing');
-          playBtn.classList.remove('playing');
-        });
+        const playPromise = video.play();
+        
+        // Check if promise exists (for older browser compatibility)
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            // Video playback started successfully
+            videoItem.classList.add('video-playing');
+            playBtn.classList.add('playing');
+          }).catch(err => {
+            // Playback was prevented (autoplay policy, loading issues, etc.)
+            console.log('Video play prevented:', err);
+            // Reset UI state if play failed
+            videoItem.classList.remove('video-playing');
+            playBtn.classList.remove('playing');
+          });
+        }
       }
     }, 50);
   } else {
@@ -236,6 +243,24 @@ function toggleVideoMute(muteBtn) {
 
 // Initialize video controls when page loads
 document.addEventListener('DOMContentLoaded', function() {
+  // Handle autoplay video on index.html with proper promise handling
+  const frankaVideo = document.getElementById('franka-video');
+  if (frankaVideo) {
+    const playPromise = frankaVideo.play();
+    
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        // Autoplay started successfully
+        console.log('Franka video autoplay started');
+      }).catch(error => {
+        // Autoplay was prevented by browser policy
+        // Video remains paused, user can click to play if we add controls
+        console.log('Franka video autoplay prevented:', error);
+        // Optionally show play button or handle gracefully
+      });
+    }
+  }
+  
   // Add click handlers to video play buttons
   document.querySelectorAll('.video-play-btn').forEach(btn => {
     btn.addEventListener('click', function() {
@@ -258,9 +283,6 @@ document.addEventListener('DOMContentLoaded', function() {
       toggleVideoPlayback(videoItem);
     });
   });
-  
-  // Don't auto-play videos on page load - respect browser autoplay policies
-  // Videos will only play when user explicitly interacts with them
 });
 
 // Keyboard navigation for media gallery
