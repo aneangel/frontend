@@ -157,15 +157,19 @@ function updateMediaActive(gallery, activeIndex) {
   const mediaItems = gallery.querySelectorAll('.media-item');
   const thumbnails = gallery.querySelectorAll('.thumbnail');
   
-  // Pause all videos and reset play states
+  // Pause videos that are not becoming active
   gallery.querySelectorAll('video').forEach((video, index) => {
     const mediaItem = video.closest('.media-item');
     const playBtn = mediaItem.querySelector('.video-play-btn');
     
-    video.pause();
-    mediaItem.classList.remove('video-playing');
-    if (playBtn) {
-      playBtn.classList.remove('playing');
+    // Only pause videos that are not in the item becoming active
+    const itemIndex = Array.from(mediaItems).indexOf(mediaItem);
+    if (itemIndex !== activeIndex) {
+      video.pause();
+      mediaItem.classList.remove('video-playing');
+      if (playBtn) {
+        playBtn.classList.remove('playing');
+      }
     }
   });
   
@@ -191,12 +195,20 @@ function toggleVideoPlayback(videoItem) {
   const playBtn = videoItem.querySelector('.video-play-btn');
   
   if (video.paused) {
-    video.play().then(() => {
-      videoItem.classList.add('video-playing');
-      playBtn.classList.add('playing');
-    }).catch(err => {
-      console.log('Play prevented:', err);
-    });
+    // Add a small delay to ensure any competing operations finish first
+    setTimeout(() => {
+      if (video.paused) { // Double-check it's still paused
+        video.play().then(() => {
+          videoItem.classList.add('video-playing');
+          playBtn.classList.add('playing');
+        }).catch(err => {
+          console.log('Play prevented:', err);
+          // Reset UI state if play failed
+          videoItem.classList.remove('video-playing');
+          playBtn.classList.remove('playing');
+        });
+      }
+    }, 50);
   } else {
     video.pause();
     videoItem.classList.remove('video-playing');
