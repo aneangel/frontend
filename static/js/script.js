@@ -64,21 +64,8 @@ function toggleExpansion(card) {
       checkScrollability(card);
     }, 300);
     
-    // Auto-play active video if there is one
-    const activeVideo = card.querySelector('.media-item.active[data-type="video"] video');
-    if (activeVideo) {
-      const videoItem = activeVideo.closest('.media-item');
-      const playBtn = videoItem.querySelector('.video-play-btn');
-      
-      setTimeout(() => {
-        activeVideo.play().then(() => {
-          videoItem.classList.add('video-playing');
-          if (playBtn) playBtn.classList.add('playing');
-        }).catch(err => {
-          console.log('Autoplay prevented on expand:', err);
-        });
-      }, 400);
-    }
+  // Don't auto-play videos on expand - let user control playback
+  // This respects browser autoplay policies and user preferences
   }
 }
 
@@ -192,30 +179,8 @@ function updateMediaActive(gallery, activeIndex) {
     thumb.classList.toggle('active', index === activeIndex);
   });
   
-  // Auto-play video if the new active item is a video
-  const activeItem = mediaItems[activeIndex];
-  if (activeItem && activeItem.dataset.type === 'video') {
-    const video = activeItem.querySelector('video');
-    const playBtn = activeItem.querySelector('.video-play-btn');
-    
-    if (video) {
-      // Small delay to ensure the transition is smooth
-      setTimeout(() => {
-        video.play().then(() => {
-          activeItem.classList.add('video-playing');
-          if (playBtn) {
-            playBtn.classList.add('playing');
-          }
-        }).catch(err => {
-          console.log('Autoplay prevented:', err);
-          // Autoplay was prevented, show play button
-          if (playBtn) {
-            playBtn.classList.remove('playing');
-          }
-        });
-      }, 300);
-    }
-  }
+  // Don't auto-play videos when navigating - respect browser autoplay policies
+  // Videos will only play when user explicitly clicks the play button
 }
 
 // Video control functions
@@ -282,21 +247,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Auto-play active videos on page load
-  document.querySelectorAll('.media-gallery').forEach(gallery => {
-    const activeVideo = gallery.querySelector('.media-item.active[data-type="video"] video');
-    if (activeVideo) {
-      const videoItem = activeVideo.closest('.media-item');
-      const playBtn = videoItem.querySelector('.video-play-btn');
-      
-      activeVideo.play().then(() => {
-        videoItem.classList.add('video-playing');
-        if (playBtn) playBtn.classList.add('playing');
-      }).catch(err => {
-        console.log('Initial autoplay prevented:', err);
-      });
-    }
-  });
+  // Don't auto-play videos on page load - respect browser autoplay policies
+  // Videos will only play when user explicitly interacts with them
 });
 
 // Keyboard navigation for media gallery
@@ -329,12 +281,8 @@ function checkScrollability(card) {
   
   const hasVerticalScroll = card.scrollHeight > card.clientHeight;
   
-  console.log('Scroll check:', {
-    scrollHeight: card.scrollHeight,
-    clientHeight: card.clientHeight,
-    hasScroll: hasVerticalScroll,
-    card: card
-  });
+  // Optional debug logging (commented out to reduce console noise)
+  // console.log('Scroll check:', { hasScroll: hasVerticalScroll });
   
   if (hasVerticalScroll) {
     card.classList.add('has-scroll');
