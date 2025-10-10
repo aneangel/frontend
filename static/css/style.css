@@ -241,11 +241,80 @@ section#about {
   transform: translate(-50%, -50%);
   width: 90%;
   max-width: 800px;
+  height: auto;
   max-height: 90vh;
   overflow-y: auto;
+  overflow-x: hidden;
   z-index: 1000;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
   border-radius: 16px;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #2a2a2a;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Custom scrollbar styling for webkit browsers */
+.project-card.expanded::-webkit-scrollbar {
+  width: 8px;
+}
+
+.project-card.expanded::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 10px;
+}
+
+.project-card.expanded::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.project-card.expanded::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Scroll fade indicators for long content */
+.project-card.expanded {
+  --top-fade-opacity: 0;
+  --bottom-fade-opacity: 0;
+}
+
+.project-card.expanded::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to bottom, #212121, transparent);
+  z-index: 2;
+  pointer-events: none;
+  opacity: var(--top-fade-opacity);
+  transition: opacity 0.3s ease;
+}
+
+.project-card.expanded.has-scroll::before {
+  opacity: var(--top-fade-opacity);
+}
+
+.project-card.expanded::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  background: linear-gradient(to top, #212121, transparent);
+  z-index: 2;
+  pointer-events: none;
+  opacity: var(--bottom-fade-opacity);
+  transition: opacity 0.3s ease;
+}
+
+.project-card.expanded.has-scroll::after {
+  opacity: var(--bottom-fade-opacity);
 }
 
 .project-card.expanded:hover {
@@ -558,7 +627,11 @@ section#about {
 .project-card-content {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 0 0 auto;
+}
+
+.project-card.expanded .project-card-content {
+  flex: 0 0 auto;
 }
 
 .project-expanded-content {
@@ -575,12 +648,14 @@ section#about {
   transform: translateY(0);
   transition: opacity 0.4s ease 0.2s,
               transform 0.4s ease 0.2s;
+  flex: 1;
+  overflow: visible;
 }
 
 .expanded-section {
-  padding: 25px 0 15px 0;
+  padding: 30px 0 20px 0;
   border-top: 1px solid #333;
-  margin-top: 20px;
+  margin-top: 25px;
 }
 
 /* Enhanced styling for full-width expanded view */
@@ -617,58 +692,43 @@ section#about {
 }
 
 .project-card.expanded .expanded-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  padding: 25px 0;
+  display: block;
+  padding: 30px 0;
 }
 
-.project-card.expanded .expanded-section h4 {
-  font-size: 1.2em;
-  margin-bottom: 12px;
-  color: #ffffff;
-}
 
-.project-card.expanded .expanded-section > div {
-  display: flex;
-  flex-direction: column;
-}
 
-/* Two-column layout for expanded content */
-.expanded-section > *:nth-child(1),
-.expanded-section > *:nth-child(2) {
-  grid-column: span 1;
-}
-
-.expanded-section > *:nth-child(3) {
-  grid-column: span 2;
-}
+/* Single-column layout for expanded content */
 
 .expanded-section h4 {
   color: #ffffff;
-  font-size: 1.1em;
+  font-size: 1.2em;
   font-weight: 600;
-  margin: 0 0 10px 0;
-  line-height: 1.3;
+  margin: 20px 0 15px 0;
+  line-height: 1.4;
+}
+
+.expanded-section h4:first-child {
+  margin-top: 0;
 }
 
 .expanded-section p {
-  color: #e0e0e0;
-  font-size: 0.9em;
-  line-height: 1.5;
-  margin: 0 0 15px 0;
+  color: #f0f0f0;
+  font-size: 1em;
+  line-height: 1.7;
+  margin: 0 0 20px 0;
 }
 
 .expanded-section ul {
-  color: #e0e0e0;
-  font-size: 0.9em;
-  line-height: 1.4;
-  margin: 0 0 15px 0;
-  padding-left: 20px;
+  color: #f0f0f0;
+  font-size: 1em;
+  line-height: 1.6;
+  margin: 0 0 20px 0;
+  padding-left: 24px;
 }
 
 .expanded-section li {
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 /* Expand indicator styles */
@@ -832,26 +892,42 @@ section#about {
   .project-card.expanded {
     width: 95%;
     max-height: 95vh;
+    height: auto;
     padding: 20px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #2a2a2a;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  /* Mobile scrollbar styling */
+  .project-card.expanded::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .project-card.expanded::-webkit-scrollbar-track {
+    background: #2a2a2a;
+    border-radius: 8px;
+  }
+  
+  .project-card.expanded::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 8px;
   }
   
   .project-card.expanded .expanded-section {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    display: block;
   }
   
   .project-card.expanded .project-card-content img {
     height: 200px;
   }
   
-  .expanded-section > *:nth-child(1),
-  .expanded-section > *:nth-child(2),
-  .expanded-section > *:nth-child(3) {
-    grid-column: span 1;
-  }
-  
   .expanded-section {
-    padding: 15px 0 10px 0;
+    padding: 20px 0 15px 0;
   }
   
   .expand-indicator {

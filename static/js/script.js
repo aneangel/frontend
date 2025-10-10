@@ -31,6 +31,12 @@ function toggleExpansion(card) {
   const allCards = document.querySelectorAll('.project-card.expanded');
   allCards.forEach(otherCard => {
     otherCard.classList.remove('expanded');
+    otherCard.classList.remove('has-scroll');
+    // Clean up scroll handlers
+    if (otherCard.scrollHandler) {
+      otherCard.removeEventListener('scroll', otherCard.scrollHandler);
+      otherCard.scrollHandler = null;
+    }
   });
 
   // Remove backdrop if closing
@@ -52,6 +58,11 @@ function toggleExpansion(card) {
     projectsGrid.classList.add('has-expanded');
     // Disable body scroll when modal is open
     document.body.style.overflow = 'hidden';
+    
+    // Check if content is scrollable and add indicator
+    setTimeout(() => {
+      checkScrollability(card);
+    }, 300);
     
     // Auto-play active video if there is one
     const activeVideo = card.querySelector('.media-item.active[data-type="video"] video');
@@ -306,3 +317,59 @@ document.addEventListener('keydown', function(event) {
     if (nextBtn) navigateMedia(nextBtn, 1);
   }
 });
+
+// Function to check if content is scrollable and add visual indicators
+function checkScrollability(card) {
+  // Ensure scrolling is enabled by default
+  card.style.overflowY = 'auto';
+  card.style.overflowX = 'hidden';
+  
+  // Force recalculation of dimensions
+  card.offsetHeight; // Force reflow
+  
+  const hasVerticalScroll = card.scrollHeight > card.clientHeight;
+  
+  console.log('Scroll check:', {
+    scrollHeight: card.scrollHeight,
+    clientHeight: card.clientHeight,
+    hasScroll: hasVerticalScroll,
+    card: card
+  });
+  
+  if (hasVerticalScroll) {
+    card.classList.add('has-scroll');
+    
+    // Remove existing scroll listeners to prevent duplicates
+    if (card.scrollHandler) {
+      card.removeEventListener('scroll', card.scrollHandler);
+    }
+    
+    // Add scroll event listener to update fade indicators
+    card.scrollHandler = function() {
+      updateScrollIndicators(card);
+    };
+    card.addEventListener('scroll', card.scrollHandler);
+    
+    // Initial update
+    updateScrollIndicators(card);
+    
+    // Force initial scroll position check
+    setTimeout(() => {
+      updateScrollIndicators(card);
+    }, 50);
+  } else {
+    card.classList.remove('has-scroll');
+  }
+}
+
+// Function to update scroll fade indicators based on scroll position
+function updateScrollIndicators(card) {
+  const isAtTop = card.scrollTop === 0;
+  const isAtBottom = card.scrollTop + card.clientHeight >= card.scrollHeight - 1;
+  
+  // Update top fade indicator (hide when at top)
+  card.style.setProperty('--top-fade-opacity', isAtTop ? '0' : '1');
+  
+  // Update bottom fade indicator (hide when at bottom)
+  card.style.setProperty('--bottom-fade-opacity', isAtBottom ? '0' : '1');
+}
