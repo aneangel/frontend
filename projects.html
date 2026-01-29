@@ -8,6 +8,7 @@
         <meta property="og:description" content="My robotics and AI projects" />
         <title>Projects</title>
         <link rel="stylesheet" href="./static/css/style.css">
+        <link rel="icon" type="image/png" href="./static/media/IMG_7630.JPG">
     </head>
     <body>
         <h1 style="font-size: 1.9em; font-weight: bold; margin: 0 0 10px 0;">Anthony Angeles</h1>
@@ -27,48 +28,67 @@
         <section id="projects" class="container">
             <div class="projects-content">
                 <div class="projects-grid">
-                    <div class="project-card">
+                    
+                     <div class="project-card">
                         <div class="project-card-content">
-                            <h3>RobotBallet GoogleDeepmind</h3>
-                            <div style="margin: 10px 0;">
-                                <img src="./static/media/robotballet/googleDeepmind.png" alt="GoogleDeepmind RobotBallet Research" style="max-width: 100%; height: auto; border: 1px solid #000; margin-bottom: 10px; display: block;">
-                                <img src="./static/media/robotballet/franka_rl_progress.png" alt="Reinforcement Learning Progress" style="max-width: 100%; height: auto; border: 1px solid #000; margin-bottom: 10px; display: block;">
-                                <img src="./static/media/robotballet/franka_rl_progress_2.png" alt="Advanced RL Training Progress" style="max-width: 100%; height: auto; border: 1px solid #000; margin-bottom: 10px; display: block;">
-                            </div>
+                            <h3>Robot Learning</h3>
+
                             <div class="project-tags">
-                                <a href="https://github.com/aneangel/robotballet" target="_blank"><span class="tag">code</span></a>
-                                <a href="https://www.science.org/doi/10.1126/scirobotics.ads1204" target="_blank"><span class="tag">Publication</span></a>
+                                <a href="https://github.com/aneangel/robot-learn" target="_blank"><span class="tag">code</span></a>
                             </div>
-                            <p>My attempt at replicating the research presented by GoogleDeepmind in MuJoCo. This is currently still on going.</p>
                         </div>
                         <div class="project-expanded-content">
                             <div class="expanded-section">
                                 <div>
                                     <h4>Project Overview</h4>
-                                    <p>This project focuses on replicating the groundbreaking robotics research from GoogleDeepmind, specifically their work on creating ballet-like movements in robotic systems using advanced motion planning and control algorithms.</p>
+                                    <p>This project focuses on learning from demonstrated trajectories.</p>
                                     
                                     <h4>Implementation Details</h4>
-                                    <p>The implementation uses MuJoCo's advanced physics engine to create realistic robotic movements that mirror the grace and precision of ballet. The system incorporates complex trajectory planning algorithms to ensure smooth, flowing motions while maintaining physical constraints and stability.</p>
+                                    <p>The implementation uses DMPs (Dynamic Movement Primatives), DTW (Dynamic Time Warping), GMM/GMR (Gaussian Mixture Model/Regression) and methods for adaption to new trajectories and obstacle avoidance.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-            
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Autonomous Robotic Air Hockey</h3>
+
+                            <div class="project-tags">
+                                <a href="https://github.com/aneangel/MECH207" target="_blank"><span class="tag">code</span></a>
+                                <a href="https://www.youtube.com/watch?v=miBlxTSHdW4" target="_blank"><span class="tag">video demonstration</span></a>
+                                <a href="https://www.youtube.com/watch?v=c0tw36ebl8k" target="_blank"><span class="tag">motor demonstration</span></a>
+                                <a href="./reports/Mech 207 Final Report.pdf" download><span class="tag">download project report</span></a>
+                            </div>
+                        </div>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <div>
+                                    <h4>Project Overview</h4>
+                                    <p>This project was done with a partner for our Advance Mechatronics I course.</p>
+                                    
+                                    <h4>Implementation Details</h4>
+                                    <p>The implementation uses a gantry arm using NEMA-17 stepper motors controlled by an Arduino microcontroller. The system integrates sensors for puck detection and employs control algorithms to autonomously play air hockey against a human opponent.
+                                        Computer Vision was handled through a ZED II camera, that used hue values to detect the puck and track its movement across the table. All of the computer vision and path planning computational load was handled by a Jetson Orin Nano.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="project-card">
                         <div class="project-card-content">
                             <h3>Reinforcement Learning using Isaac Lab and Sim</h3>
-                            <img src="./static/media/rl.png" alt="Project Image" style="max-width: 100%; height: auto; border: 1px solid #000; margin: 10px 0; display: block;">
                             <div class="project-tags">
                                 <a href="https://github.com/aneangel/IsaacLab_RL" target="_blank"><span class="tag">code</span></a>
                                 <a href="https://www.youtube.com/watch?v=YbjEn9K7KVk" target="_blank"><span class="tag">video</span></a>
                             </div>
-                            <p>Using reinforcement learning we teach the manipulator to reach an end goal pose matching the end goal orientation.</p>
+                            <p></p>
                         </div>
                         <div class="project-expanded-content">
                             <div class="expanded-section">
                                 <h4>Project Overview</h4>
-                                <p>This project leverages NVIDIA Isaac Lab and Isaac Sim to create a reinforcement learning environment where robotic manipulators learn complex reaching tasks. The system trains robots to achieve precise pose and orientation targets through trial and learning.</p>
+                                <p>This project using NVIDIA Isaac Lab and Isaac Sim creates a reinforcement learning environment where robotic manipulators learn complex reaching tasks. The system trains robots to achieve precise pose and orientation targets through trial and learning. Using reinforcement learning we teach the manipulator to reach an end goal pose matching the end goal orientation.</p>
                                 
                                 
                             </div>
@@ -77,49 +97,7 @@
 
                     <div class="project-card">
                         <div class="project-card-content">
-                            <h3>Path Planning Simulation</h3>
-                            <div style="margin: 10px 0;">
-                                <!-- <img src="./static/media/pathFindingSim/fluidSim.png" alt="Pathfinding Simulation Overview" style="max-width: 100%; height: auto; border: 1px solid #000; margin-bottom: 10px; display: block;"> -->
-                                <img src="./static/media/pathFindingSim/aStar.png" alt="Pathfinding Algorithm Details" style="max-width: 100%; height: auto; border: 1px solid #000; margin-bottom: 10px; display: block;">
-                            </div>
-                            <div class="project-tags">
-                                <a href="https://github.com/aneangel/particlePaths" target="_blank"><span class="tag">code</span></a>
-                            </div>
-                            <p>Particle Fluid Simulation that demonstrates path planning in dynamic environments.</p>
-                        </div>
-                        <div class="project-expanded-content">
-                            <div class="expanded-section">
-                                <h4>Project Overview</h4>
-                                <p>This project explores path planning algorithms in dynamic environments that can be agitated through user interaction.</p>
-                                
-                                <h4>Implementation Details</h4>
-                                <p>Uses both SPH and Euler fluid simulation to create a dynamic environment that can be agitated through user interaction. This simulation uses both methods to create the particle behavior that then assigns two random particles to find the most optimal path between them while the environment changes.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Game AI -->
-                    <div class="project-card">
-                        <div class="project-card-content">
-                            <h3>Game AI</h3>
-                            <img src="./static/media/GameAI.png" alt="Project Image" style="max-width: 75%; height: auto; border: 1px solid #000; margin: 10px 0; display: block;">
-                            <div class="project-tags">
-                                <!-- <a href="https://github.com/aneangel/game-ai" target="_blank"><span class="tag">code</span></a> -->
-                                <a href="https://www.youtube.com/watch?v=nDhM38-K7y0" target="_blank"><span class="tag">video</span></a>
-                            </div>
-                            <p>Agentic AI that follows player interacting with the world environment to achieve its goal.</p>
-                        </div>
-                        <div class="project-expanded-content">
-                            <div class="expanded-section">
-                                <h4>Project Overview</h4>
-                                <p>An intelligent game AI system that creates autonomous agents capable of understanding and interacting with complex game environments. The AI agents can observe player behavior and adapt their strategies dynamically.</p>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <div class="project-card">
-                        <div class="project-card-content">
                             <h3>A* Path Planning</h3>
-                            <img src="./static/media/pathPlanning.png" alt="Project Image" style="max-width: 100%; height: auto; border: 1px solid #000; margin: 10px 0; display: block;">
                             <div class="project-tags">
                                 <a href="https://github.com/aneangel/motion-planning" target="_blank"><span class="tag">code</span></a>
                                 <a href="https://www.youtube.com/watch?v=BoZSmXVNabU" target="_blank"><span class="tag">video</span></a>
@@ -136,8 +114,26 @@
 
                     <div class="project-card">
                         <div class="project-card-content">
+                            <h3>Path Planning Simulation</h3>
+                            <div class="project-tags">
+                                <a href="https://github.com/aneangel/particlePaths" target="_blank"><span class="tag">code</span></a>
+                            </div>
+                            <p>Particle Fluid Simulation that demonstrates path planning in dynamic environments.</p>
+                        </div>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <h4>Project Overview</h4>
+                                <p>This project explores path planning algorithms in dynamic environments that can be agitated through user interaction.</p>
+                                
+                                <h4>Implementation Details</h4>
+                                <p>Uses both SPH and Euler fluid simulation to create a dynamic environment that can be agitated through user interaction. This simulation uses both methods to create the particle behavior that then assigns two random particles to find the most optimal path between them while the environment changes.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-card-content">
                             <h3>Object Detection for VR</h3>
-                            <img src="./static/media/yolov8.png" alt="Project Image" style="max-width: 100%; height: auto; border: 1px solid #000; margin: 10px 0; display: block;">
                             <div class="project-tags">
                                 <a href="https://github.com/aneangel/YOLOv8-objectDetection" target="_blank"><span class="tag">code</span></a>
                                 <a href="https://tr.soe.ucsc.edu/sites/default/files/technical-reports/UCSC-SOE-23-06.pdf" target="_blank"><span class="tag">Publication</span></a>
@@ -157,7 +153,6 @@
                     <div class="project-card">
                         <div class="project-card-content">
                             <h3>Particle Fluid Simulation</h3>
-                            <img src="./static/media/particleSim.png" alt="Project Image" style="max-width: 100%; height: auto; border: 1px solid #000; margin: 10px 0; display: block;">
                             <div class="project-tags">
                                 <a href="https://github.com/aneangel/simulations-cpp/tree/main/fluids" target="_blank"><span class="tag">code</span></a>
                                 <a href="https://www.youtube.com/watch?v=PQDpikbLeA0&t=42s" target="_blank"><span class="tag">video</span></a>
@@ -171,25 +166,47 @@
                             </div>
                         </div>
                     </div>
-            
+
                     <div class="project-card">
                         <div class="project-card-content">
-                            <h3>Computer Vision Projects</h3>
-                            <img src="./static/media/sampleImage.png" alt="Project Image" style="max-width: 75%; height: auto; border: 1px solid #000; margin: 10px 0; display: block;">
+                            <h3>RobotBallet GoogleDeepmind</h3>
+
                             <div class="project-tags">
-                                <a href="https://github.com/aneangel/cv-projects/tree/main/facial-detection" target="_blank"><span class="tag">code</span></a>
+                                <a href="https://github.com/aneangel/robotballet" target="_blank"><span class="tag">code</span></a>
+                                <a href="https://www.science.org/doi/10.1126/scirobotics.ads1204" target="_blank"><span class="tag">Google Deepmind's whitepaper</span></a>
                             </div>
-                            <p>Various projects dealing with computer vision that I am working on. Currently I have a facial detection script available for use.</p>
+                            <p>My attempt at replicating the research presented by GoogleDeepmind in MuJoCo. This is currently still on going.</p>
+                        </div>
+                        <div class="project-expanded-content">
+                            <div class="expanded-section">
+                                <div>
+                                    <h4>Project Overview</h4>
+                                    <p>This project focuses on replicating the groundbreaking robotics research from GoogleDeepmind, specifically their work on creating ballet-like movements in robotic systems using advanced motion planning and control algorithms.</p>
+                                    
+                                    <h4>Implementation Details</h4>
+                                    <p>The implementation uses MuJoCo's advanced physics engine to create realistic robotic movements that mirror the grace and precision of ballet. The system incorporates complex trajectory planning algorithms to ensure smooth, flowing motions while maintaining physical constraints and stability.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Game AI
+                    <div class="project-card">
+                        <div class="project-card-content">
+                            <h3>Game AI</h3>
+                            <div class="project-tags">
+                                <a href="https://github.com/aneangel/game-ai" target="_blank"><span class="tag">code</span></a>
+                                <a href="https://www.youtube.com/watch?v=nDhM38-K7y0" target="_blank"><span class="tag">video</span></a>
+                            </div>
+                            <p>Agentic AI that follows player interacting with the world environment to achieve its goal.</p>
                         </div>
                         <div class="project-expanded-content">
                             <div class="expanded-section">
                                 <h4>Project Overview</h4>
-                                <p>A comprehensive collection of computer vision projects showcasing various techniques in image processing and pattern recognition. The repository includes facial detection systems and other advanced CV applications.</p>
-                                
-
+                                <p>An intelligent game AI system that creates autonomous agents capable of understanding and interacting with complex game environments. The AI agents can observe player behavior and adapt their strategies dynamically.</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
