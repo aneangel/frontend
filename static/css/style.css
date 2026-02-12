@@ -14,18 +14,28 @@ body {
 }
 
 header {
-  padding: 0;
-  margin-bottom: 20px;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 650px;
+  width: calc(100% - 40px);
+  padding: 10px 20px;
+  margin: 0;
   border-bottom: 1px solid #000;
+  background-color: #ffffff;
+  z-index: 1000;
 }
 
 section#about {
-  padding: 10px 0;
+  padding-top: 100px;
+  padding-bottom: 10px;
   text-align: left;
 }
 
 section#index {
-  padding: 10px 0;
+  padding-top: 100px;
+  padding-bottom: 10px;
   text-align: left;
 }
 
@@ -255,7 +265,8 @@ section#index {
 }
 
 #projects.container {
-  padding: 20px 0;
+  padding-top: 100px;
+  padding-bottom: 20px;
 }
 
 .projects-grid {
